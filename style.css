@@ -1,0 +1,60 @@
+* {
+   margin:0;
+   padding:0;
+   box-sizing: border-box;
+   font-family: arial;
+}
+body {
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+}
+input {
+   display: none;
+}
+p {
+   font-size: 1.5rem;
+   margin: 0 15%;
+}
+label {
+   position:relative;
+   width:150px;
+   height:50px;
+   margin:0 0 50px 0;
+   transition:all .3s;
+}
+label::before {
+   content: "Dark";
+   position:absolute;
+   width: 100%;
+   height:100%;
+   background-color: black;
+   color:white;
+   font-size:2rem;
+   letter-spacing: 2px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+input:checked ~ label::before {
+   content: "Light";
+   color:black;
+   background-color: white;
+}
+section {
+   position: absolute;
+   width: 100%;
+   height: 100vh;
+   z-index: -1;
+}
+input:checked ~ section {
+   background-color: black;
+}
+input:checked ~ p {
+   color:white;
+}
+label:hover {
+   transform: scaleX(0.9);
+}
